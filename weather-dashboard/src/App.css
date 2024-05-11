@@ -26,6 +26,16 @@ p {
     font-size: 14px;
 }
 
+.day-details p {
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.rain {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .drop-down-menu {
     text-align: center;
 }
@@ -103,23 +113,36 @@ img {
     justify-content: space-around;
 }
 
-.weather-day-container {
+.weather-current-container {
     margin: 10px;
     width: 150px;
     background-color: #125488;
     border-radius: 10px;
-    
     padding: 10px 20px; 
+    text-align: left; 
+}
+
+.weather-forecast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 86px;
+    background-color: #125488;
+    border-radius: 10px;
+    padding: 10px; 
     text-align: left; 
 }
 
 .weather-icon {
     width: 60px;
     height: 60px;
-    object-fit: cover;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: 0;
+    margin: 0;
+}
+
+.small-weather-icon {
+    width: 40px;
+    height: 40px;
 }
 
 .days {
@@ -128,14 +151,17 @@ img {
 
 .day-details {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 0;
 }
 
-.preciprication-details {
-    margin-top: 0;
+.min-max-temperature {
+    display: flex;
 }
+
+
 
 
 

@@ -25,7 +25,7 @@ function CurrentWeather({ selectedCity }) {
     const weatherIcon = (currentWeather) ? getWeatherIcon(currentWeather.current.weather_code) : "";
 
     return (
-      <div className="weather-day-container">
+      <div className="weather-current-container">
         {currentWeather && (
           <>
             <h4>{formattedDate}</h4>

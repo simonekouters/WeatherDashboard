@@ -17,7 +17,7 @@ export function getWeatherIcon(weatherCode) {
 }
 
 export function getFormattedDate(unformattedDate) {
-    const daysOfWeek = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+    const daysOfWeek = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
     const months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
     const date = new Date(unformattedDate); 
 

@@ -19,7 +19,7 @@ function App() {
             <img className="city-photo" src={"/" + selectedCity.name.toLowerCase() + ".jpg"} alt={selectedCity.name} />
           </div>
         </div>
-      <h2 className="forecast-title">3-daagse verwachting</h2>
+      <h2 className="forecast-title">5-daagse verwachting</h2>
       <WeatherForecast selectedCity={selectedCity} />
       </div>
     </div>
