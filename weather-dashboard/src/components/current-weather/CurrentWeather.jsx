@@ -4,7 +4,7 @@ import { getWeatherIcon, getFormattedDate } from '../helper-functions/HelperFunc
 
 function CurrentWeather({ selectedCity }) {
     const [currentWeather, setCurrentWeather] = useState();
-    const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + selectedCity.latitude + "&longitude=" + selectedCity.longitude + "&current=weather_code,temperature_2m,apparent_temperature,rain,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=1";
+    const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${selectedCity.latitude}&longitude=${selectedCity.longitude}&current=weather_code,temperature_2m,apparent_temperature,rain,wind_speed_10m&timezone=Europe%2FBerlin&forecast_days=1`;
     
     useEffect(() => {
       fetch(apiUrl)
@@ -30,11 +30,11 @@ function CurrentWeather({ selectedCity }) {
           <>
             <h4>{formattedDate}</h4>
             <div className="current-temperature">
-              <h5>{Math.floor(currentWeather.current.temperature_2m) + "°"}</h5>
-              <img className="weather-icon" src={"/icons/" + weatherIcon + ".png"} alt={weatherIcon} />
+              <h5>{`${Math.floor(currentWeather.current.temperature_2m)}°`}</h5>
+              <img className="weather-icon" src={`/icons/${weatherIcon}.png`} alt={weatherIcon} />
             </div>
-            <p>{"Voelt als " + Math.floor(currentWeather.current.apparent_temperature) + "°"}</p>
-            <p>{"Neerslag " + currentWeather.current.rain + " mm"}</p>
+            <p>{`Voelt als ${Math.floor(currentWeather.current.apparent_temperature)}°`}</p>
+            <p>{`Neerslag ${currentWeather.current.rain} mm`}</p>
           </>
         )}
       </div>
