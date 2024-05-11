@@ -25,13 +25,13 @@ function CurrentWeather({ selectedCity }) {
     const weatherIcon = (currentWeather) ? getWeatherIcon(currentWeather.current.weather_code) : "";
 
     return (
-      <div className="current-weather-container">
+      <div className="weather-day-container">
         {currentWeather && (
           <>
             <h4>{formattedDate}</h4>
-            <div className="current-weather">
+            <div className="current-temperature">
               <h5>{Math.floor(currentWeather.current.temperature_2m) + "°"}</h5>
-              <img className="current-weather-icon" src={"/icons/" + weatherIcon + ".png"} alt={weatherIcon} />
+              <img className="weather-icon" src={"/icons/" + weatherIcon + ".png"} alt={weatherIcon} />
             </div>
             <p>{"Voelt als " + Math.floor(currentWeather.current.apparent_temperature) + "°"}</p>
             <p>{"Neerslag " + currentWeather.current.rain + " mm"}</p>

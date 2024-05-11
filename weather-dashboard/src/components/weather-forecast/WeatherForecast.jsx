@@ -22,22 +22,25 @@ function WeatherForecast({ selectedCity }) {
     }, [selectedCity]);
 
     const days = weatherForecast ? (
-        <div>
+        <div className="days">
            {weatherForecast.daily.time.map((_, i) => (
-                <div key={i}>
-                    <h4>{getFormattedDate(weatherForecast.daily.time)}</h4>
-                    <div className="days">
-                        <div>
-                            <p>{"Min " + Math.floor(weatherForecast.daily.temperature_2m_min) + "°"}</p>
-                            <p>{"Max " + Math.floor(weatherForecast.daily.temperature_2m_max) + "°"}</p>
+            // start at the second day, because day 1 is also the current weather
+                i > 0 && (
+                    <div className="weather-day-container" key={i}>
+                        <h4>{getFormattedDate(weatherForecast.daily.time[i])}</h4>
+                        <div className="day-details">
+                            <div>
+                                <p>{"Min " + Math.floor(weatherForecast.daily.temperature_2m_min[i]) + "°"}</p>
+                                <p>{"Max " + Math.floor(weatherForecast.daily.temperature_2m_max[i]) + "°"}</p>
+                            </div>
+                            <img className="weather-icon" src={"/icons/" + getWeatherIcon(weatherForecast.daily.weather_code[i]) + ".png"} alt={getWeatherIcon(weatherForecast.daily.weather_code)}/>
                         </div>
-                        <img className="forecast-weather-icon" src={"/icons/" + getWeatherIcon(weatherForecast.daily.weather_code) + ".png"} alt={getWeatherIcon(weatherForecast.daily.weather_code)}/>
+                        <p className="precipication-details">{"Neerslag " + weatherForecast.daily.rain_sum[i] + " mm"}</p>
                     </div>
-                    <p className="precipication-details">{"Neerslag " + weatherForecast.daily.rain_sum + " mm"}</p>
-                </div>
+                )
             ))}
         </div>
-        ) : null;
+    ) : null;
 
     return (
     <div className="weather-forecast-container">

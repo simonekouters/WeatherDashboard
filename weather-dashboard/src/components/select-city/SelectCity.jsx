@@ -20,10 +20,9 @@ function SelectCity({ selectedCity, setSelectedCity }) {
     }
 
   return (
-    <>
-        <h2>{selectedCity.name}</h2>
-        <select value={selectedCity.name} onChange={handleChange}>{cityOptions}</select>
-    </>
+    <div className="drop-down-menu">
+        <select className="select-city-name" value={selectedCity.name} onChange={handleChange}>{cityOptions}</select>
+    </div>
   );
 }
 

@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#2A93D5, #37CAEC);
+    color: #D1EBff;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 38px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+h4 {
+    color: #37CAEC;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h5 {
+    font-size: 34px;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+}
+
+.drop-down-menu {
+    text-align: center;
+}
+
+
+.select-city-name {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #D1EBff;
+    color: #125488;
+    outline: none;
+}
+
+select option {
+    font-weight: 600;
+    background-color: #D1EBff;
+    color: #125488;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.today {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     
+}
+
+.city-name {
+    margin: 10px;
+}
+
+.photo-div {
+    display: flex;
+}
+
+img {
+    width: 400px;
+    height: 194px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.current-temperature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forecast-title {
+    text-align: center;
+}
+
+.weather-forecast {
+    display: flex;
+    justify-content: space-around;
+}
+
+.weather-day-container {
+    margin: 10px;
+    width: 150px;
+    background-color: #125488;
+    border-radius: 10px;
+    
+    padding: 10px 20px; 
+    text-align: left; 
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.days {
+    display: flex;
+}
+
+.day-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.preciprication-details {
+    margin-top: 0;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        height: 200vh;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .weather-forecast {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .photo-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .city-name {
+        text-align: center;
+    }
+    
+    img {
+        width: 190px;
+        height: 100px;
+    }
+}
+
