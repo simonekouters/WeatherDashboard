@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import React, { useState } from 'react'
-import { getWeatherIcon, getFormattedDate } from '../helper-functions/HelperFunctions';
+import DayCard from './DayCard';
 
 function WeatherForecast({ selectedCity }) {
   const [weatherForecast, setWeatherForecast] = useState();
@@ -22,28 +22,25 @@ function WeatherForecast({ selectedCity }) {
       });
   }, [selectedCity]);
 
-  const dayForecast = weatherForecast ? (
+  const dayForecasts = weatherForecast ? (
     <div className="days">
       {weatherForecast.daily.time.map((day, i) => (
         // start at the second day, because day 1 is also the current weather
         i > 0 && (
-          <div className="day-weather-card" key={day}>
-            <h4>{getFormattedDate(weatherForecast.daily.time[i])}</h4>
-            <div className="day-details">
-              <img className="small-weather-icon" src={`/icons/${getWeatherIcon(weatherForecast.daily.weather_code[i])}.png`} alt={getWeatherIcon(weatherForecast.daily.weather_code)} />
-              <div className="min-max-temperature">
-                <p>{`${Math.floor(weatherForecast.daily.temperature_2m_min[i])}°/`}</p>
-                <p>{`${Math.floor(weatherForecast.daily.temperature_2m_max[i])}°`}</p>
-              </div>
-            </div>
-            <p className="rain">{`${weatherForecast.daily.rain_sum[i]} mm`}</p>
-          </div>
+          <DayCard
+            key={day}
+            day={day}
+            minTemperature={weatherForecast.daily.temperature_2m_min[i]}
+            maxTemperature={weatherForecast.daily.temperature_2m_max[i]}
+            rainSum={weatherForecast.daily.rain_sum[i]}
+            weatherCode={weatherForecast.daily.weather_code[i]}
+          />
         )
       ))}
     </div>
   ) : null;
 
-  return weatherForecast && dayForecast;
+  return weatherForecast && dayForecasts;
 }
 
 export default WeatherForecast;
