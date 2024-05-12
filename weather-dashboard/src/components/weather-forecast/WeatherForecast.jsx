@@ -27,7 +27,7 @@ function WeatherForecast({ selectedCity }) {
       {weatherForecast.daily.time.map((day, i) => (
         // start at the second day, because day 1 is also the current weather
         i > 0 && (
-          <div className="weather-forecast-container" key={day}>
+          <div className="day-weather-card" key={day}>
             <h4>{getFormattedDate(weatherForecast.daily.time[i])}</h4>
             <div className="day-details">
               <img className="small-weather-icon" src={`/icons/${getWeatherIcon(weatherForecast.daily.weather_code[i])}.png`} alt={getWeatherIcon(weatherForecast.daily.weather_code)} />

@@ -11,8 +11,8 @@ function App() {
     <div>
       <h1>Weersverwachting</h1>
       <SelectCity selectedCity={selectedCity} setSelectedCity={setSelectedCity} />
-      <div className="weather-container">
-        <div className="current-weather-container">
+      <div className="container">
+        <div className="weather-container">
           <h2 className="city-name">{selectedCity.name}</h2>
           <div className="photo-div">
             <CurrentWeather selectedCity={selectedCity} />
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
