@@ -96,6 +96,7 @@ h4 {
     color: #37CAEC;
     margin-bottom: 10px;
     margin-top: 10px;
+    font-size: 16px;
 }
 
 h5 {
@@ -158,17 +159,45 @@ p {
 
 @media only screen and (max-width: 768px) {
     body {
-        height: 200vh;
+        height: 110vh;
     }
 
     h1 {
+        margin-top: 20px;
+        margin-bottom: 0;
         font-size: 22px;
     }
 
-    .days {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+    h2 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .current-weather-container {
+        flex-direction: row;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 0;
+     }
+ 
+    .current-weather-container p {
+        padding-bottom: 5px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+ 
+    .current-weather-container h4 {
+        margin-bottom: 0;
+    }
+
+    .select-city-name {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .weather-icon {
+        margin-left: 20px;
     }
 
     .photo-div {
@@ -178,12 +207,53 @@ p {
     }
 
     .city-name {
-        text-align: center;
+        display: none;
     }
     
     .city-photo {
         width: 190px;
         height: 100px;
+    }
+
+    .days {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .day-weather-card {
+        flex-direction: row;
+        justify-content: center;
+        width: 170px;
+        margin: 5px;
+        padding: 2px 10px; 
+    }
+
+    .day-weather-card h4 {
+        font-size: 12px;
+        width: 20px;
+    }
+
+    .current-temperature h5 {
+        font-size: 26px;
+    }
+
+    .small-weather-icon {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .day-details {
+        flex-direction: row;
+        margin-right: 10px;
+    }
+
+    .day-details p {
+        margin: 0; 
+    }
+
+    .rain {
+        margin: 0;
+        padding: 0;
     }
 }
 
