@@ -5,7 +5,7 @@ import CurrentWeather from './components/current-weather/CurrentWeather';
 import WeatherForecast from './components/weather-forecast/WeatherForecast';
 
 function App() {
-  const [selectedCity, setSelectedCity] = useState({name: "Amsterdam", latitude: 52, longitude: 4});
+  const [selectedCity, setSelectedCity] = useState({ name: "Amsterdam", latitude: 52, longitude: 4 });
 
   return (
     <div>
@@ -19,8 +19,8 @@ function App() {
             <img className="city-photo" src={`/${selectedCity.name.toLowerCase()}.jpg`} alt={selectedCity.name} />
           </div>
         </div>
-      <h2 className="forecast-title">5-daagse verwachting</h2>
-      <WeatherForecast selectedCity={selectedCity} />
+        <h2 className="forecast-title">5-daagse verwachting</h2>
+        <WeatherForecast selectedCity={selectedCity} />
       </div>
     </div>
   );
